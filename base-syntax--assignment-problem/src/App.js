@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
+import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
+  state = {
+    userName: 'DaveS'
+  }
+
   render() {
     return (
       <div className="App">
-        <ol>
+        {/* <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>UserInput should hold an input element, UserOutput two paragraphs</li>
           <li>Output multiple UserOutput components in the App component (any paragraph texts of your choice)</li>
@@ -17,6 +23,13 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
+        <hr></hr> */}
+        
+        <UserInput />
+
+        <UserOutput userName='Dave' />
+        <UserOutput userName={this.state.userName}/>
+        
       </div>
     );
   }
