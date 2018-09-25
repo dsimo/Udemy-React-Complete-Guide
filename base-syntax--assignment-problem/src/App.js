@@ -8,10 +8,14 @@ class App extends Component {
     userName: 'DaveS'
   }
 
+  userNameChangedHandler = (event) => {
+    this.setState({userName: event.target.value});
+  }
+
   render() {
     return (
       <div className="App">
-        {/* <ol>
+        <ol>
           <li>Create TWO new components: UserInput and UserOutput</li>
           <li>UserInput should hold an input element, UserOutput two paragraphs</li>
           <li>Output multiple UserOutput components in the App component (any paragraph texts of your choice)</li>
@@ -23,11 +27,12 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
-        <hr></hr> */}
+        <hr></hr>
         
-        <UserInput />
+        <UserInput changed={this.userNameChangedHandler} currentName={this.state.userName}/>
 
         <UserOutput userName='Dave' />
+        <UserOutput userName={this.state.userName}/>
         <UserOutput userName={this.state.userName}/>
         
       </div>
